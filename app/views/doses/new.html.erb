@@ -1,9 +1,2 @@
-<div class="container">
-<p>test dose</p>
-<%= simple_form_for [ @cocktail, @ingredient, @dose ] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :cocktail %>
-  <%= f.association :ingredient %>
-  <%= f.button :submit %>
-<% end %>
-</div>
+<%= render "cocktails/wrapper" %>
+<%= render "dose_form", dose: @dose %>

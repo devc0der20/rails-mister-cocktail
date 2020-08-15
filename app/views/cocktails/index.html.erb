@@ -1,45 +1,26 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://unsplash.com/photos/r8BDLH-iqvw" %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<%= render "navbar" %>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
 
-
-<div class="container mt-2">
-  <div class="row row-cols-3 row-cols-md-2">
+<div class="container m-2">
+  <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col mb-4">
+
         <div class="card" style="width: 18rem;">
           <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text text-center">
+            <i class="fas fa-plus-circle"></i>
             <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-link" %>
+            <!-- Scrollable modal -->
+            <%= render "modal", cocktail: cocktail %>
+
             </p>
+
           </div>
         </div>
+
       </div>
     <% end %>
   </div>
