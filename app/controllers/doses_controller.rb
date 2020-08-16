@@ -16,8 +16,7 @@ def create
   end
 
   def destroy
-    raise
-    @dose = Dose.find(params[:id])
+    @dose = Dose.find(params[dose_id])
     @dose.destroy
     redirect_to cocktail_path(@dose.cocktail)
   end

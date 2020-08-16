@@ -1,26 +1,25 @@
-<div class="container-sm m-3">
-  <div class="card text-center">
-    <div class="card-header">
-      <h5><%= @cocktail.name %></h5>
-    </div>
-    <div class="card-body">
-          <%@cocktail.doses.each do |dose| %>
-      <h5 class="card-title"><%= dose.description %></h5>
-      <p class="card-text"><%= dose.ingredient.name %></p>
-          <% end %>
-    </div>
-    <div class="card-footer text-muted">
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-      <div class="btn-group mr-2" role="group" aria-label="First group">
-        <button type="button" class="btn btn-secondary"><%= link_to "Back", root_path %></button>
-        <button type="button" class="btn btn-secondary"><%= link_to "add dose",  new_cocktail_dose_path(@cocktail) %></button>
-        <button type="button" class="btn btn-secondary"><%= link_to "delete dose", dose_path %></button>
-        <button type="button" class="btn btn-secondary">4</button>
+  <div class="container mx-auto mt-3">
+      <div class="row">
+          <div class="col mb-4">
+              <div class="card text-center" style="width: 32rem;">
+                  <div class="card-header">
+                      <h5><%= @cocktail.name %></h5>
+                  </div>
+                  <div class="card-body">
+                      <%@cocktail.doses.each do |dose| %>
+                      <h5 class="card-title"><%= dose.description %></h5>
+                      <p class="card-text"><%= dose.ingredient.name %></p>
+                      <% end %>
+                  </div>
+                  <div class="card-footer text-muted">
+                      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                          <div class="btn-group mr-2" role="group" aria-label="First group">
+                              <button type="button" class="btn btn-outline-primary"><%= link_to "Back", root_path %></button>
+                              <button type="button" class="btn btn-outline-primary"><%= link_to "add dose",  new_cocktail_dose_path(@cocktail) %></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-
-
-    </div>
   </div>
-</div>
-
