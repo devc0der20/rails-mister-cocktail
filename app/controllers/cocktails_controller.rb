@@ -1,3 +1,5 @@
+require "open-uri"
+
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
@@ -15,11 +17,11 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
+    @cocktail.photo.attach(io: @cocktail.photo , filename: 'nes.png', content_type: 'image/png')
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
       render :new
-
     end
   end
 

@@ -5,7 +5,7 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col mb-4">
       <div class="card" style="width: 18rem;">
-        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="img-fluid card-img-top" alt="...">
+        <%= cl_image_tag photo.key, crop: :fill %>
         <div class="card-body">
           <h5 class="card-text text-center">
             <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-link" %>
